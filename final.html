@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sign-Up/Login Form</title>
+  <link href="css/form.css" rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="css/button.css">
+  <link rel="stylesheet" href="css/radio.css">
+  <link rel="stylesheet" href="css/style.css"> 
+</head>
+
+<body>
+  <div class="form">
+      
+      <ul class="tab-group">
+        <li class="tab active"><a href="#signup">Sign Up</a></li>
+        <li class="tab"><a href="#login">Log In</a></li>
+      </ul>
+      
+      <div class="tab-content">
+        <div id="signup">   
+          <h1>Sign Up for Free</h1>
+          
+          <form action="register.html" method="post">
+          
+          <div class="top-row">
+            <div class="field-wrap">
+              <label>
+                First Name<span class="req">*</span>
+              </label>
+              <input type="text" NAME="na" required autocomplete="off" />
+            </div>
+        
+            <div class="field-wrap">
+              <label>
+                Last Name<span class="req">*</span>
+              </label>
+              <input type="text" NAME="lna" required autocomplete="off"/>
+            </div>
+          </div>
+
+
+
+<div class ="top-row">
+<table>
+
+<tr><td><div class="field-wrap">
+	<label>Gender</label>
+</div></td></tr>
+
+<tr>
+<td>
+		  <div class="field-wrap">
+			<container class="container"><font color="#00FFFF"> Male &ensp;&ensp; </font>
+  				<input type="radio" checked="checked" value="male" name="ra">
+				
+				
+ 		 		<span class="checkmark"></span>
+			</container>
+   		  </div>
+</td>
+<td>
+		 <div class="field-wrap">
+			<container class="container"><font color="#00FFFF"> Female &ensp;&ensp; </font>
+  				<input type="radio" value="female" name="ra">
+ 		 		<span class="checkmark"></span>
+			</container>
+		 </div>
+</td>
+	<td>	<div class="field-wrap">
+			<container class="container"><font color="#00FFFF"> Others </font>
+  				<input type="radio" value="others" name="ra">
+ 		 		<span class="checkmark"></span>
+			</container>
+		 </div>
+</td></tr></table></div>
+        
+	  <div class="field-wrap">
+            <label>
+              Degree<span class="req">*</span>
+            </label>
+             <input type="text" name="de" required autocomplete="off"/>
+          </div>
+
+          <div class="field-wrap">
+            <label>
+              College Name<span class="req">*</span>
+            </label>
+            <input type="text" name="coll"required autocomplete="off"/>
+          </div>
+
+          <div class="top-row">
+            <div class="field-wrap">
+              <label>
+                City<span class="req">*</span>
+              </label>
+              <input type="text" name="city" required autocomplete="off" />
+            </div>
+        
+            <div class="field-wrap">
+              <label>
+                State<span class="req">*</span>
+              </label>
+              <input type="text" name="state" required autocomplete="off"/>
+            </div>
+          </div>
+          
+          <div class="field-wrap">
+            <label>
+              Email Address<span class="req">*</span>
+            </label>
+            <input type="email" name="email" required autocomplete="off"/>
+          </div>
+          
+          <div class="field-wrap">
+            <label>
+              Set A Password<span class="req">*</span>
+            </label>
+            <input type="password" name="ps" id="password" required autocomplete="off"/>
+          </div>
+
+          <div class="field-wrap">
+            <label>
+              Confirm Password<span class="req">*</span>
+            </label>
+            <input type="password" id="confirm_password" required autocomplete="off"/>
+          </div>
+		  
+		  <div class="field-wrap">
+            <label>
+              What is your Favourite Colour ?<span class="req">*</span>
+            </label>
+            <input type="text" name="colour" required autocomplete="off"/>
+          </div>
+
+          <button type="submit" class="button button-block"/>Get Started</button>          
+          </form>
+
+        </div>        
+        <div id="login">   
+          <h1>Welcome Back!</h1>          
+          <form action="login.html" method="post">          
+           <div class="field-wrap">
+            <label>
+              Email Address<span class="req">*</span>
+            </label>
+            <input type="email" name="email" required autocomplete="off"/>
+           </div>          
+
+          <div class="field-wrap">
+            <label>
+              Password<span class="req">*</span>
+            </label>
+            <input type="password" name="pass" required autocomplete="off"/>
+          </div>          
+
+          <p class="forgot"><a href="forget_pswd.html">Forgot Password?</a></p>          
+          <button class="button button-block"/>Log In</button>          
+         </form>
+        </div>        
+      </div><!-- tab-content -->      
+</div> <!-- /form -->
+<script src="js/jquery.js"></script>
+<script  src="js/index.js"></script>
+<script  src="js/pswd.js"></script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<html><body>
+<?php
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "mynewdb";
+$conn = new mysqli($servername, $username, $password, $dbname);
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+    $email = mysqli_real_escape_string($conn, $_POST['email']);
+	$colour = mysqli_real_escape_string($conn, $_POST['colour']);
+	$result = mysqli_query($conn, "SELECT * FROM reg WHERE ma = '" . $email. "' and sec = '" . $colour. "'");
+	if ($row = mysqli_fetch_array($result)) {
+		$_SESSION['email'] = $row['ma'];
+		$_SESSION['colour'] = $row['sec'];
+		$_password= $row['pass'];
+		echo '<body background=3.jpg><br><br><h2><center>     	
+		Your Password is : <br><br>	'.$_password;  
+			} 
+	else {
+            echo '<body background=3.jpg><br><br><h2><center>   	
+		    Sorry, Incorrect Email or Security Answer!!!';
+}
+?></body>
+</html>

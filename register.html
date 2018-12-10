@@ -1,0 +1,41 @@
+<html>
+<body>
+<?php
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "mynewdb";
+$conn = new mysqli($servername, $username, $password, $dbname);
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+    $na = $_POST['na'];
+	$la = $_POST['lna'];
+	$ge = $_POST['ra'];
+	$de = $_POST['de'];
+	$col = $_POST['coll'];
+	$ci = $_POST['city'];	
+	$st= $_POST['state'];
+	$ma = $_POST['email'];
+	$ps = $_POST['ps'];
+	$colour=$_POST['colour'];
+
+$stmt = $conn->prepare("INSERT INTO reg (na, la, ge, de, col, ci, st, ma, pass, sec) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+$stmt->bind_param("ssssssssss", $na, $la, $ge, $de, $col, $ci, $st, $ma, $ps, $colour);
+
+$stmt->execute();
+echo '<body background=3.jpg><br><br><center><h2>
+       Registred Sucessfully!!</h2>';
+	echo '<br> NAME: '.$na;
+	echo '<br> LAST NAME: '.$la;
+	echo '<br> GENDER: '.$ge;
+	echo '<br> DEGREE: '.$de;
+	echo '<br> COLLEGE: '.$col;
+	echo '<br> CITY: '.$ci;
+	echo '<br> STATE: '.$st;
+	echo '<br> E-Mail: '.$ma;
+	echo '<br> SECURITY ANSWER: '.$colour;
+?>
+</body>
+</html>

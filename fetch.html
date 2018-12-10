@@ -1,0 +1,47 @@
+    <html> 
+    <head> 
+       <title>AJAX jQuery with PHP MySQL Json</title> 
+       <style type="text/css">
+        body{
+          font-family: Verdana, Geneva, sans-serif;
+        }
+      .container{
+          width: 50%;
+          margin: 0 auto;
+      }      
+     table, tr, th, td {
+        border: 1px solid #e3e3e3;
+        padding: 10px;
+     }     
+    </style> 
+    </head> 
+    <body background="3.jpg"><br><br>     
+    <div class = "container" > 
+        <p>Click on button to display users records from Json</p>         
+        <div id="records"></div>         
+        <p>
+            <input type = "button" id = "getusers" value = "Get Users" />
+        </p>      
+    </div> 
+    <script src="http://code.jquery.com/jquery-3.1.1.min.js"></script>   
+    <script type="text/javascript"> 
+        $(function(){ 
+          $("#getusers").on('click', function(){ 
+          $.ajax({ 
+            method: "GET",             
+            url: "json.html",
+          }).done(function( data ) { 
+            var result= $.parseJSON(data); 
+            var string='<table width="100%"><tr> <th>DEGREE</th><th>Name</th> <th>E-Mail</th><tr>';                         
+            $.each( result, function( key, value ) {               
+              string += "<tr> <td>"+value['de'] + "</td><td>"+value['na'] +' '+value['la']+'</td>  \
+                        <td>'+value['ma']+"</td> </tr>"; 
+                  }); 
+              string += '</table>'; 
+              $("#records").html(string); 
+           }); 
+        }); 
+    }); 
+    </script> 
+    </body>
+    </html>
